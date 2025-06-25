@@ -8,7 +8,7 @@ export default function Register({ onSwitchToLogin }) {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5001/api/auth/register', form);
+      await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, form);
       setMessage('✅ Registered successfully. You can now log in.');
       setForm({ username: '', password: '' });
     } catch (err) {
